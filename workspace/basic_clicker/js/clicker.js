@@ -13,7 +13,8 @@ var scoreText;
 
 function create() {
     game.stage.backgroundColor = '#000034';
-    
+
+//create the buttons
      killbtn = game.add.button(10,10, 'killbtn', killZombie, this, 0, 0, 1, 0 );
      resetbtn = game.add.button(10,60, 'resetbtn', resetScore, this, 0,0,1,0);
 
