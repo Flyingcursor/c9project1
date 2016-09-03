@@ -47,24 +47,27 @@ function create() {
 
 
 function explore () {
-    rndExplore = game.rnd.integerInRange(1, 6);    
+    rndExplore = game.rnd.integerInRange(1, 6);   
+    //rndExplore = 4;
 
-    if(rndExplore <4) {    
-        kills ++;
-        killText.text = "Kills: " + kills;
+    switch(rndExplore) {
+        case 4:
+            food ++;
+            foodText.text = "BULLSHIT " + food;
+            break;
+        case 5:
+            materials ++;
+            materialText.text = "Materials: " + materials;
+            break;
+        case 6:
+            survivors ++;
+            survivorText.text = "Survivors: " + survivors;
+            break;
+        default:
+            kills ++;
+            killText.text = "Kills: " + kills;           
     }
-    else if (rndExplore==4) {
-        materials ++;
-        materialText.text = "Materials: " + materials;
-    }
-    else if (rndExplore==5) {
-        food = food++;
-        foodText.text = "Food: " + food;
-    }
-    else {
-        survivors ++;
-        survivorText.text = "Survivors: " + survivors;
-    }
+
     dummyText.text = "Random: " + rndExplore;
 }
 
@@ -72,6 +75,12 @@ function resetScore() {
     
     kills = 0;
     killText.text = "Kills: 0";
+    materials =0;
+    materialText.text = "Materials: 0";
+    food = 0;
+    foodText.text = "Food: 0";
+    survivors = 0;
+    survivorText.text = "Survivors: 0";
 }
 
 function render() {
